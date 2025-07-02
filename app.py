@@ -27,11 +27,4 @@ fig = px.scatter(df,x='odometer',y='price',color='condition')
 ##fig.show()
 st.plotly_chart(fig)
 
-df['condition'].value_counts().plot(kind='bar')
 
-df.groupby('model')['price'].mean().sort_values(ascending=False)[:20].plot(kind='bar')
-
-
-df['model'].value_counts()[:20].plot(kind='bar')
-
-df['price'].value_counts()[:20].plot(kind='bar')
