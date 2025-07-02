@@ -11,9 +11,12 @@ data=pd.read_csv('vehicles_us.csv')
 
 st.header('Vehicles')
 
-number_of_trials = st.slider('Car Names', 1, 1000, 10)
+number_of_trials = st.slider('Milage', 1, 1000, 10)
 start_button = st.button('Run')
 
+df.head()
+
+df.tail()
 
 
 #st.write(px.histogram(...))
@@ -23,3 +26,12 @@ st.plotly_chart(fig)
 fig = px.scatter(data,x='odometer',y='price',color='condition')
 ##fig.show()
 st.plotly_chart(fig)
+
+df['condition'].value_counts().plot(kind='bar')
+
+df.groupby('model')['price'].mean().sort_values(ascending=False)[:20].plot(kind='bar')
+
+
+df['model'].value_counts()[:20].plot(kind='bar')
+
+df['price'].value_counts()[:20].plot(kind='bar')
