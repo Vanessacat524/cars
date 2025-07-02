@@ -4,7 +4,7 @@ import plotly.express as px
 
 
 #read the csv file here
-data=pd.read_csv('vehicles_us.csv')
+df =pd.read_csv('vehicles_us.csv')
 
 
 #use the st.checkbox
@@ -20,10 +20,10 @@ df.tail()
 
 
 #st.write(px.histogram(...))
-fig = px.histogram(data,x='price')
+fig = px.histogram(df,x='price')
 st.plotly_chart(fig)
 #st.write(px.scattr(....))
-fig = px.scatter(data,x='odometer',y='price',color='condition')
+fig = px.scatter(df,x='odometer',y='price',color='condition')
 ##fig.show()
 st.plotly_chart(fig)
 
