@@ -9,7 +9,7 @@ df =pd.read_csv('vehicles_us.csv')
 
 #use the st.checkbox
 
-st.header('Vehicles')
+
 st.markdown("<h1 style='text-align: center;'>Vehicles</h1>", unsafe_allow_html=True)
 
 start_button = st.button('Run')
