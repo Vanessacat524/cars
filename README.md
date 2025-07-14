@@ -1,6 +1,18 @@
 # cars 
 render: https://cars-7z5g.onrender.com
 
+Make the table of cars
+We create a table (called a DataFrame) that lists different cars—like their brand, model, year, and price.
+
+Add a "Run" button
+We put a button in the app that says Run. Nothing happens until you click it.
+
+Filter the cars when you click
+When you press Run, the app checks the table and pulls out only the cars that are Ford or Jeep.
+
+Show the filtered list
+Finally, the app shows a smaller table with just the Ford and Jeep cars.
+
 
 
  Checkbox Toggle
