@@ -11,9 +11,12 @@ df =pd.read_csv('vehicles_us.csv')
 
 st.header('Vehicles')
 st.markdown("<h1 style='text-align: center;'>Vehicles</h1>", unsafe_allow_html=True)
+
 start_button = st.button('Run')
 
-st.checkbox()
+if st.checkbox("Show only cars prices less than $20k"):
+    df = df[df['price'] < 20000]
+
 df.head()
 
 df.tail()
@@ -28,7 +31,7 @@ fig = px.scatter(df,x='odometer',y='price',color='condition')
 st.plotly_chart(fig)
 
 # Load example DataFrame
-df = px.data.carshare()
+#df = px.data.carshare()
 
 st.title("Carshare Data Visualization")
 
