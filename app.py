@@ -4,37 +4,18 @@ import plotly.express as px
 
 
 
-
+df = pd.read_csv("vehicles_us.csv")
 
 
 
 st.markdown("<h1 style='text-align: center;'>Vehicles</h1>", unsafe_allow_html=True)
 
-start_button = st.button('Run')
 
-# Example vehicle data (replace with your actual DataFrame loading code)
-df = pd.DataFrame([
-    {"make": "Ford", "model": "Bronco", "year": 2025, "price": 40000},
-    {"make": "Jeep", "model": "Wrangler", "year": 2025, "price": 38000},
-    {"make": "Toyota", "model": "Camry", "year": 2024, "price": 25000},
-    # … more rows …
-])
 
-if st.button("Run"):
-    # Filter for Ford or Jeep
-    filtered = df[df["make"].isin(["Ford", "Jeep"])]
+
+
     
-    # Optional: further filters in the sidebar
-    makes = st.sidebar.multiselect("Make", options=filtered["make"].unique(), default=filtered["make"].unique())
-    years = st.sidebar.multiselect("Year", options=filtered["year"].unique(),
-                                   default=filtered["year"].unique())
     
-    filtered = filtered[
-        filtered["make"].isin(makes) &
-        filtered["year"].isin(years)
-    ]
-    
-    st.dataframe(filtered)
 #use the st.checkbox
 if st.checkbox("Show only cars prices less than $20k"):
     df = df[df['price'] < 20000]
